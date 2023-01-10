@@ -6,7 +6,6 @@ for i in wts:
 
 f=open("IPmarks.txt","r")
 a=f.read()
-print(a)
 f.close()
 l=[]
 s=[]
