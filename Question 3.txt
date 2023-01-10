@@ -1,0 +1,19 @@
+suresh:
+rajesh, 1
+prajul, 1
+sugrev, 0
+
+rajesh:
+suresh, 1 
+prajul, 0
+sugrev, 0
+
+prajul:
+suresh, 0
+rajesh, 1
+sugrev, 1
+
+sugrev:
+prajul, 0
+rajesh, 1
+suresh, 1
