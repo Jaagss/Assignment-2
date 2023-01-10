@@ -17,4 +17,3 @@ for i in range(0,len(l),2):
     total+=menu[l[i]-1][1]*l[i+1]
 print()
 print("TOTAL"+",",n,"items"+",","Rs",total)
-
