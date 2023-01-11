@@ -1,4 +1,5 @@
 phone_book={}
+
 def insert():
     name=input("Enter name: ")
     dict={}
