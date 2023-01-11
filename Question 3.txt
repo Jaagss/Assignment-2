@@ -1,11 +1,11 @@
 suresh:
 rajesh, 1
 prajul, 1
-sugrev, 0
+sugrev, 1
 
 rajesh:
-suresh, 1 
-prajul, 0
+suresh, 0
+prajul, 1
 sugrev, 0
 
 prajul:
@@ -14,6 +14,6 @@ rajesh, 1
 sugrev, 1
 
 sugrev:
-prajul, 0
+prajul, 1
 rajesh, 1
 suresh, 1

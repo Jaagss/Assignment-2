@@ -1,5 +1,5 @@
 f=open("Question 3.txt","r")
-n=int(input())
+n=int(input("The number of students: "))
 yearbook={}
 for i in range(n*2-1):
     a=f.readline()
@@ -27,5 +27,8 @@ for key,value in yearbook.items():
             count_1+=1
     max_[key]=count_1
 m=max(max_.values())
+mi=min(max_.values())
 name=[k for k,v in max_.items() if v==m]
-print(*name,sep=" ")
+minimum=[k for k,v in max_.items() if v==mi]
+print("The students with maximum signatures: ",*name,sep=" ")
+print("The students with minimum signatures: ",*minimum,sep=" ")
