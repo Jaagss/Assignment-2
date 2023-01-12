@@ -12,7 +12,7 @@ while count<8:
     n=input("Enter a 5 character string: ")
 
     if len(n)!=5:
-        print("Invalid input")
+        print("Invalid input\n")
 
     else:
         count+=1
