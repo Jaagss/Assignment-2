@@ -1,5 +1,8 @@
 import random as r
-word_list=["abuse","adult","agent","anger","apple","award","basis","beach","birth","block","blood","board","brain","bread","break","brown","buyer","cause","chain","chair","chest","chief","child","china","claim","class","clock","coach","coast","court","cover","cream","crime","cross","crowd","crown","cycle","dance","death","depth","doubt","draft","drama","dream","dress","drink","drive","earth","enemy","entry"]
+word_list=["abuse","adult","agent","anger","input","sting","print","beach","birth","block","wrong","board","brain","bread","break","brown","buyer",
+"cause","chain","chair","chest","chief","child","china","claim","cable","space","brave","coast","court","cover","cream","crime","quick","crowd","crown",
+"crows","dance","death","depth","doubt","draft","marks","dream","grade","drink","drive","earth","saved","entry","faith","cloth","towel","clots","sharp","slice",
+"stone","space","solid","extra","eight","gable","habit","hacks","table","vague"]
 a=r.randint(0,len(word_list))
 print(word_list[a])
 count=1
