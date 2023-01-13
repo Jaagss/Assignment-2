@@ -3,14 +3,21 @@ l=[]
 def courseno(n):
     ans=True
     for i in n[0]:
-        if i.isdigit():
-            index=n[0].index(i)
-            if n[0][0:index].isalpha() and n[0][0:index].isupper():
-                ans=True
-                if n[0][index:].isdigit():
-                    ans=True
-                else:
+        if i.isalnum():
+            if i.isdigit():
+                index=n[0].index(i)
+                if index==0:
                     ans=False
+                    return ans
+                if n[0][index:].isalpha():
+                    ans=False
+                    return ans
+            elif i.isalpha() and i.isupper():
+                ans=True
+            elif i.islower():
+                ans=False
+                return ans
+                
     return ans
 
 
