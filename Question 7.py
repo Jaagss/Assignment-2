@@ -1,14 +1,15 @@
+import ast
 phone_book={}
 def read():
     f=open("addrbook.txt","r")
-    a=f.read()
+    phone_book=ast.literal_eval(f.read())
     f.close()
-    a=eval(a)
-    return(a)
+    return phone_book
 
 def write():
     f=open("addrbook.txt","w")
-    f.write(phone_book)
+    s=str(phone_book)
+    f.write(s)
     f.close()
 
 def insert():
@@ -44,12 +45,12 @@ def find_phone():
 while True:
     choice=int(input("1 : Inserting new entry: \n2 : Deleting an entry: \n3 : Find all entries from name \n4 : Find the entry with phone number \n5 : Exit\n\nPlease enter your choice: "))
     if choice==1:
-        phone_book=insert()
-        write(phone_book)
+        new_phone_book=insert()
+        phone_book={**phone_book,**new_phone_book}
         print()
     elif choice==2:
-        phone_book=delete()
-        write(phone_book)
+        new_phone_book=delete()
+        phone_book={**phone_book,**new_phone_book}
         print()
     elif choice==3:
         print(find_name())
@@ -58,4 +59,5 @@ while True:
         print(find_phone())
         print()
     elif choice==5:
+        write()
         break
