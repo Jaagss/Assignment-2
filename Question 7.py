@@ -16,13 +16,20 @@ def write(phone_book):
 def insert(phone_book):
     name=input("Enter name: ")
     dict={}
-    phone_book[name]=dict
     address=input("Enter address: ")
     phone=int(input("Enter phone number: "))
     email=input("Enter email id: ")
-    dict["address"]=address
-    dict["phone"]=phone
-    dict["email"]=email
+    dict[name] = {
+        'address': address,
+        'phone': phone,
+        'email': email
+    }
+    add_list = []
+    for k,v in phone_book.items():
+        if k==name:
+            add_list.append(v)
+            add_list.append(dict[name])
+        phone_book[k] = add_list
     return phone_book
 
 def delete(phone_book):
