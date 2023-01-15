@@ -15,21 +15,29 @@ def write(phone_book):
 
 def insert(phone_book):
     name=input("Enter name: ")
-    dict={}
+    dict1={}
+    temp_dict = {}
     address=input("Enter address: ")
     phone=int(input("Enter phone number: "))
     email=input("Enter email id: ")
-    dict[name] = {
-        'address': address,
-        'phone': phone,
-        'email': email
-    }
-    add_list = []
-    for k,v in phone_book.items():
-        if k==name:
-            add_list.append(v)
-            add_list.append(dict[name])
-        phone_book[k] = add_list
+    temp_dict['address'] = address
+    temp_dict['phone'] = phone
+    temp_dict['email'] = email
+    l = []
+    l.append(temp_dict)
+    dict1[name] = l
+    if phone_book == {}:
+        phone_book = dict1
+    else:
+        add_list = []
+        for k,v in phone_book.items():
+            if k==name:
+                add_list.append(v)
+                add_list.append(dict1[name])
+            if(len(add_list)==0):
+                phone_book = dict1
+            else:
+                phone_book[k] = add_list
     return phone_book
 
 def delete(phone_book):
@@ -45,10 +53,17 @@ def find_name(phone_book):
 
 def find_phone(phone_book):
     phone=int(input("Enter phone number to search: "))
-    for keys,values in phone_book.items():
-        for i,j in values.items():
-            if j == phone:
-                return keys,phone_book[keys]
+    for key,value in phone_book.items():
+        for x in value:
+            if len(value)>1:
+                for y in x:
+                    for i,j in y.items():
+                        if j == phone:
+                            return key,y
+            else:
+                for i,j in x.items():
+                    if j == phone:
+                        return key,phone_book[key]
 
 f = open("addrbook.txt")
 if(len(f.read().splitlines())==0):
