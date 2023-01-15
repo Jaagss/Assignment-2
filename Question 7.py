@@ -1,16 +1,16 @@
-import ast
+import json
 phone_book={}
 
 
 def read():
     f=open("addrbook.txt","r+")
-    phone_book=ast.literal_eval(f.read())
+    phone_book=json.load(f)
     f.close()
     return phone_book
 
 def write(phone_book):
     f=open("addrbook.txt","w")
-    f.write(str(phone_book))
+    json.dump(phone_book,f)
     f.close()
 
 def insert(phone_book):
