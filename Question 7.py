@@ -32,7 +32,9 @@ def delete(phone_book):
 
 def find_name(phone_book):
     name_find=input("Enter name to search: ")
-    return phone_book[name_find]
+    for keys,values in phone_book.items():
+        if name_find in keys:
+            print(keys,values)
 
 def find_phone(phone_book):
     phone=int(input("Enter phone number to search: "))
@@ -61,7 +63,7 @@ while True:
         print()
     elif choice==3:
         print()
-        print(find_name(phone_book))
+        find_name(phone_book)
         print()
     elif choice==4:
         print()
