@@ -1,4 +1,4 @@
-n=int(input("Enterr x and y: "))
+n=int(input("Enter number of rows:  "))
 l=[]
 for i in range(n):
     l1=list(map(int,input().split()))

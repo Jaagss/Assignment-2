@@ -1,6 +1,12 @@
 import json
 phone_book={}
 
+def merge_friend_dictionary(address_book):
+    with open('addrbook_frnd.txt') as inline:
+        friend_dictionary = json.load(inline)
+    address_book.update(friend_dictionary)
+    return address_book
+
 def read():
     f=open("addrbook.txt","r+")
     phone_book=json.load(f)
@@ -17,7 +23,7 @@ def insert(phone_book):
     dict1={}
     temp_dict = {}
     address=input("Enter address: ")
-    phone=int(input("Enter phone number: "))
+    phone=input("Enter phone number: ")
     email=input("Enter email id: ")
     temp_dict['address'] = address
     temp_dict['phone'] = phone
@@ -31,8 +37,8 @@ def insert(phone_book):
         add_list = []
         for k,v in phone_book.items():
             if k==name:
-                add_list.append(v)
-                add_list.append(dict1[name])
+                add_list.extend(v)
+                add_list.extend(dict1[name])
             if(len(add_list)==0):
                 phone_book = dict1
             else:
@@ -51,18 +57,21 @@ def find_name(phone_book):
             print(keys,values)
 
 def find_phone(phone_book):
-    phone=int(input("Enter phone number to search: "))
-    for key,value in phone_book.items():
-        for x in value:
-            if len(value)>1:
-                for y in x:
-                    for i,j in y.items():
+    phone=input("Enter phone number or email to search: ")
+    try:
+        for key,value in phone_book.items():
+            for x in value:
+                if len(value)>1:
+                    for y in x:
+                        for i,j in y.items():
+                            if j == phone:
+                                return key,y
+                else:
+                    for i,j in x.items():
                         if j == phone:
-                            return key,y
-            else:
-                for i,j in x.items():
-                    if j == phone:
-                        return key,phone_book[key]
+                            return key,phone_book[key]
+    except:
+        return "Phone number not in address book"
 
 f = open("addrbook.txt")
 if(len(f.read().splitlines())==0):
@@ -72,8 +81,10 @@ else:
     phone_book = read()
 f.close()
 while True:
-    choice=int(input("1 : Inserting new entry: \n2 : Deleting an entry: \n3 : Find all entries from name \n4 : Find the entry with phone number \n5 : Exit\n\nPlease enter your choice: "))
-    if choice==1:
+    choice=int(input("0 : Merge the address book with your friend\n1 : Inserting new entry: \n2 : Deleting an entry: \n3 : Find all entries from name \n4 : Find the entry with phone number or email \n5 : Exit\n\nPlease enter your choice: "))
+    if choice==0:
+        merge_friend_dictionary(phone_book)
+    elif choice==1:
         new_phone_book=insert(phone_book)
         phone_book={**phone_book,**new_phone_book}
         print(phone_book)
@@ -88,8 +99,12 @@ while True:
         print()
     elif choice==4:
         print()
-        key,value = find_phone(phone_book)
-        print(key,value)
+        value = find_phone(phone_book)
+        if value is None:
+            print("Phone number not in phone book")
+            pass
+        else:
+            print(value)
         print()
     elif choice==5:
         write(phone_book)

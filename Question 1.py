@@ -11,7 +11,7 @@ while True:
         break
     else:
         l+=n
-print(l)
+
 total=0
 n=0
 for i in range(0,len(l),2):

@@ -1,19 +1,19 @@
-suresh:
-rajesh, 1
-prajul, 1
-sugrev, 1
+name1:
+name2,1
+name3,0
+name4,1
 
-rajesh:
-suresh, 0
-prajul, 1
-sugrev, 0
+name2:
+name1,1
+name3,0
+name4,1
 
-prajul:
-suresh, 0
-rajesh, 1
-sugrev, 1
+name3:
+name1,1
+name2,1
+name4,1
 
-sugrev:
-prajul, 1
-rajesh, 1
-suresh, 1
+name4:
+name1,1
+name2,0
+name3,1

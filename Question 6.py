@@ -26,7 +26,6 @@ for i in l:
             pass
         elif j!=0:
             total_marks+=i[j]/wts_new[j-1]
-    print(total_marks)
     if total_marks>=80:
         grade="A"
     elif total_marks>=70:
