@@ -8,7 +8,6 @@ word_list=["abuse","adult","agent","anger","input","sting","print","beach","birt
 a=r.randint(0,len(word_list))
 
 count=1
-letters_wrong_pos=[]
 letters_corret_pos=[]
 
 def api_check(text):
@@ -36,6 +35,7 @@ while count<7:
         print("Invalid input\n")
 
     else:
+        letters_wrong_pos=[]
         count+=1
         for i in range(5):
             if n[i]==word_list[a][i]:
@@ -52,3 +52,5 @@ while count<7:
         else:
             print("The letters in correct position: \n"+s[:5],"\n")
             print("Letters in the word: \n"+"".join(letters_wrong_pos),"\n")
+else:
+    print("Ops!, You couldnt guess the word.\nThe word was:",word_list[a])

@@ -2,27 +2,27 @@
 l=[]
 def courseno(n):
     ans=True
-    for i in n[0]:
-        if i.isalnum():
+    if n[0].isalnum():
+        for i in n[0]:
             if i.isdigit():
                 index=n[0].index(i)
                 if index==0:
                     ans=False
                     return ans
-                if n[0][index:].isalpha():
+                elif n[0][index:].isalpha():
                     ans=False
                     return ans
-            elif i.isalpha() and i.isupper():
-                ans=True
-            elif i.islower():
+                elif n[0][0:index].islower():
+                    ans=False
+                    return ans
+            elif n[0][-1].isalpha():
                 ans=False
                 return ans
-                
     return ans
 
 
 while True:
-    n=list(map(str,input().split())) #taking input in a list 
+    n=list(map(str,input("Enter course name, Credit and Grade: ").split())) #taking input in a list 
     a,b,c,d,e,f=0,0,0,0,0,0
     if len(n)==0:                    # if the input is empty list the loop breaks
         break

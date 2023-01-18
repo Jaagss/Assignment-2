@@ -1,7 +1,6 @@
 import json
 phone_book={}
 
-
 def read():
     f=open("addrbook.txt","r+")
     phone_book=json.load(f)
