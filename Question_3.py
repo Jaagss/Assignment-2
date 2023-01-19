@@ -1,4 +1,4 @@
-with open("Question 3.txt","r") as f:
+with open("Yearbook.txt","r") as f:
     yearbook={}
     a=f.read().splitlines()
     for i in a:
