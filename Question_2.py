@@ -13,14 +13,14 @@ def courseno(n):
                 elif n[0][index:].isalpha():
                     ans=False
                     return ans
-                elif n[0][0:index].islower():
-                    ans=False
-                    return ans
+            elif i.islower():
+                ans=False
+                return ans
             elif n[0][-1].isalpha():
                 ans=False
                 return ans
     return ans
-
+n=["CSs12", "3", "B"]
 #Take inputs and check for invalid inputs
 while True:
     n=list(map(str,input("Enter course name, Credit and Grade: ").split())) #taking input in a list 
@@ -42,7 +42,7 @@ while True:
             print("Invalid Grade")
         if courseno(n)==True and b>0 and c>0:
             l+=n
-
+print("\nTranscript:")
 course=[]
 credit=[]
 grade=[]

@@ -63,15 +63,15 @@ def find_phone(phone_book):
             for x in value:
                 if len(value)>1:
                     for y in x:
-                        for i,j in y.items():
+                        for i,j in x.items():
                             if j == phone:
-                                return key,y
+                                return key,phone_book[key]
                 else:
                     for i,j in x.items():
                         if j == phone:
                             return key,phone_book[key]
     except:
-        return "Phone number not in address book"
+        return "Phone number or email not in address book"
 
 f = open("addrbook.txt")
 if(len(f.read().splitlines())==0):
