@@ -4,14 +4,7 @@ phone_book={}
 def merge_friend_dictionary(address_book):
     with open('addrbook_frnd.txt') as inline:
         friend_dict = json.load(inline)
-    temp_list = []
-    for i,j in zip(address_book.keys(),friend_dict.keys()):
-        if i==j:
-            temp_list.extend(address_book[i])
-            temp_list.extend(friend_dict[j])
-            address_book[i] = temp_list
-        else:
-            address_book.update(friend_dict)
+        address_book.update(friend_dict)
     return address_book
 
 def read():
@@ -94,10 +87,10 @@ while True:
     elif choice==1:
         new_phone_book=insert(phone_book)
         phone_book={**phone_book,**new_phone_book}
-        print(phone_book)
         print()
     elif choice==2:
         new_phone_book=delete(phone_book)
+    
         phone_book={**phone_book,**new_phone_book}
         print()
     elif choice==3:
