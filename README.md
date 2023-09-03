@@ -1,10 +1,15 @@
 # Library Management System
 
 
-This project is a simple Java-based library management system that allows librarians and library members to manage books, members, and book borrowing and returning operations. It consists of three main classes: Book, Member, and Library, as well as a Main class for user interaction.
+- This project is a simple Java-based library management system that allows librarians and library members to manage books, members, and book borrowing and returning operations. It consists of three main classes: Book, Member, and Library, as well as a Main class for user interaction.
+- This library management system allows for efficient management of books and members, tracks borrow times, enforces borrowing limits, and calculates fines for overdue books, ensuring smooth library operations.
+## How to run the code
+- variable phone number is in long type which accepts only 10 digits numbers which are standard in india.
+- age as an integer value
+- each choice prints according to what was written in the Assigment 1 Document and things which were not specifically written are being done according to the sample or how i thought it would be appropriate. 
 
 ## Implementation
-The library management system is implemented using Java and follows an object-oriented approach. Here's a brief explanation of each class:
+- The library management system is implemented using Java and follows an object-oriented approach. Here's a brief explanation of each class:
 
 ## Book Class
 - Represents a book in the library.
@@ -48,4 +53,3 @@ The library management system is implemented using Java and follows an object-or
 - The Main class provides a user-friendly interface for both librarians and members to interact with the library system.
 
 
-This library management system allows for efficient management of books and members, tracks borrow times, enforces borrowing limits, and calculates fines for overdue books, ensuring smooth library operations.
